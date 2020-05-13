@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Tank from "./components/tank/Tank";
 import FishMake from "./components/fishSubmit/fishMake";
@@ -23,14 +22,6 @@ class App extends Component {
         <header className="App-header">
           <FishMake addFish={this.addFish}/>
           <Tank fish={fish}/>
-          {/*<a*/}
-          {/*  className="App-link"*/}
-          {/*  href="https://reactjs.org"*/}
-          {/*  target="_blank"*/}
-          {/*  rel="noopener noreferrer"*/}
-          {/*>*/}
-          {/*  Learn React*/}
-          {/*</a>*/}
         </header>
       </div>
     );
