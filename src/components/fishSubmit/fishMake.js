@@ -20,23 +20,29 @@ class FishMake extends Component {
 
   render() {
     const {fishName, fishSelect} = this.state;
+    const {addFish} = this.props;
 
     return (
       <div>
         <form>
           <input value={fishName} onChange={e => this.fishNameChange(e.target.value)}/>
           <select value={fishSelect} onChange={e => this.fishChange(e.target.value)}>
-            {fishTypes.map((fish, i) => <option value={i}>{fish.type}</option>)}
+            {fishTypes.map((fish, i) => <option value={i} key={i}>{fish.type}</option>)}
           </select>
 
-          {/*prop callback for updating parent state triggered on press*/}
-          <button onClick={() => alert(JSON.stringify(this.state))}> Add Fish </button>
+          {/*prop callback for updating parent state*/}
+          <button onClick={(e) => {
+            e.preventDefault();
+            addFish(this.state)
+          }}> Add Fish </button>
         </form>
       </div>
     );
   }
 }
 
-FishMake.propTypes = {};
+FishMake.propTypes = {
+  addFish: PropTypes.func,
+};
 
 export default FishMake;
